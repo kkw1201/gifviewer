@@ -150,9 +150,9 @@ def weibo_crawl(url):
                                                     在最后一层获取评论接口入库
                                                     '''
                                                     try:
-                                                        db = pymysql.connect(host='180.97.15.181', port=3306, user='root', passwd='Vrv123!@#', db='fakespider', use_unicode=True, charset="utf8",cursorclass=pymysql.cursors.DictCursor)
+                                                        db = pymysql.connect(host='', port=3306, user='root', passwd='', db='', use_unicode=True, charset="utf8",cursorclass=pymysql.cursors.DictCursor)
                                                         cursors = db.cursor()
-                                                        sql = """insert into anti_spoofing_crawl(source, account_url, account_nickname, description, content, comments, crawl_time, publish_time, comments_nickname) values(source, account_url, account_nickname, description, content, comments, crawl_time, publish_time, comments_nickname)"""
+                                                        sql = """insert into sjk(source, account_url, account_nickname, description, content, comments, crawl_time, publish_time, comments_nickname) values(source, account_url, account_nickname, description, content, comments, crawl_time, publish_time, comments_nickname)"""
                                                         cursors.execute(sql)
                                                         db.commit()
                                                     except Exception as e:
